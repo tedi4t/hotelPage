@@ -1,0 +1,45 @@
+h3 {
+  font-size: 5rem;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.carousel-item {
+  height: 100vh;
+  width: 100%;
+}
+
+.carousel-item.active {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+.carousel-item.active .carousel-caption {
+  position: relative;
+  right: 0 !important;
+  left: 0 !important;
+}
+
+.carousel-indicators {
+  margin-bottom: 8vh;
+}
+.carousel-indicators li {
+  width: 6px;
+  height: 6px;
+}
+
+#carousel1, #carousel2, #carousel3 {
+  background-size: cover;
+  background-position: center center;
+}
+
+#carousel1 {
+  background: no-repeat url("../images/carousel/1.jpg");
+}
+
+#carousel2 {
+  background: no-repeat url("../images/carousel/2.jpg");
+}
+
+#carousel3 {
+  background: no-repeat url("../images/carousel/3.jpg");
+}
