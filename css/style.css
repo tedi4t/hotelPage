@@ -6,22 +6,28 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Cormorant Garamond", serif;
 }
 
-h2 {
-  font-size: 3rem;
-}
-
 h1 {
   font-size: 4rem;
 }
 
-.my-7rem {
-  margin-top: 7rem;
-  margin-bottom: 7rem;
+h2 {
+  font-size: 3rem;
 }
 
-.py-6rem {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+.container-own {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .title-border {
@@ -45,6 +51,38 @@ h1 {
 .carousel-item {
   height: 100vh;
   width: 100%;
+}
+
+.my-7rem {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
+.py-6rem {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+.pb-60 {
+  padding-bottom: 60px;
+}
+
+.py-40 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.py-50 {
+  padding-bottom: 60px;
+  padding-top: 40px;
 }
 
 .ml-50px {
@@ -136,6 +174,44 @@ h1 {
   clear: both;
 }
 
+.card-item .card-icon {
+  width: 50px;
+}
+.card-item .card-text {
+  letter-spacing: 0.1rem;
+}
+.card-item .readmore-link {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+.card-item .readmore-link::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #000;
+  transition: 0.5s all ease;
+}
+.card-item .readmore-link:hover {
+  text-decoration: none;
+  color: #000;
+}
+.card-item .readmore-link:hover::after {
+  width: 0%;
+  transition: 0.5s all ease;
+}
+
+.card-item:hover {
+  border: 1px solid black !important;
+}
+
 #carousel1, #carousel2, #carousel3 {
   background-size: cover;
   background-position: center center;
@@ -154,7 +230,7 @@ h1 {
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .container-own {
     max-width: 1440px;
   }
 }
