@@ -1,6 +1,45 @@
-h3 {
-  font-size: 5rem;
+body {
+  line-height: 1.7rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: "Cormorant Garamond", serif;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.my-7rem {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
+.py-6rem {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.title-border {
+  display: block;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.title-border h2::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  content: "";
+  width: 50px;
+  height: 1px;
+  background: #000;
 }
 
 .carousel-item {
@@ -27,6 +66,49 @@ h3 {
   height: 6px;
 }
 
+.suite-wrap {
+  width: 100%;
+}
+.suite-wrap .suite {
+  width: 60%;
+  min-width: 60%;
+  float: left;
+  position: relative;
+}
+.suite-wrap .suite .img-top {
+  width: 55%;
+  float: left;
+  margin-right: -100%;
+  z-index: 10;
+  position: relative;
+}
+.suite-wrap .suite .img-top img {
+  width: 100%;
+}
+.suite-wrap .suite .img-bottom {
+  float: right;
+  width: 75%;
+  position: relative;
+}
+.suite-wrap .suite .img-bottom img {
+  width: 100%;
+}
+.suite-wrap .suite-content {
+  width: 30%;
+  margin-left: 50px;
+  float: left;
+}
+.suite-wrap .suite-content h1 {
+  margin-bottom: 30px;
+}
+.suite-wrap .suite-content .details-link {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 10px;
+}
+
 #carousel1, #carousel2, #carousel3 {
   background-size: cover;
   background-position: center center;
@@ -42,4 +124,10 @@ h3 {
 
 #carousel3 {
   background: no-repeat url("../images/carousel/3.jpg");
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1440px;
+  }
 }
