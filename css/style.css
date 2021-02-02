@@ -47,6 +47,30 @@ h1 {
   width: 100%;
 }
 
+.ml-50px {
+  margin-left: 50px;
+}
+
+.mr-50px {
+  margin-right: 50px;
+}
+
+.mr-100 {
+  margin-right: -100%;
+}
+
+.ml-100 {
+  margin-left: -100%;
+}
+
+.mt-30p {
+  margin-top: 30%;
+}
+
+.d-grid {
+  display: grid;
+}
+
 .carousel-item.active {
   display: grid;
   align-content: center;
@@ -74,11 +98,10 @@ h1 {
   min-width: 60%;
   float: left;
   position: relative;
+  display: block;
 }
 .suite-wrap .suite .img-top {
   width: 55%;
-  float: left;
-  margin-right: -100%;
   z-index: 10;
   position: relative;
 }
@@ -86,7 +109,6 @@ h1 {
   width: 100%;
 }
 .suite-wrap .suite .img-bottom {
-  float: right;
   width: 75%;
   position: relative;
 }
@@ -95,7 +117,6 @@ h1 {
 }
 .suite-wrap .suite-content {
   width: 30%;
-  margin-left: 50px;
   float: left;
 }
 .suite-wrap .suite-content h1 {
@@ -107,6 +128,12 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 10px;
+}
+
+.suite-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 #carousel1, #carousel2, #carousel3 {
