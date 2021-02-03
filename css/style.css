@@ -82,6 +82,10 @@ h6 {
   width: 100%;
 }
 
+.mt-7rem {
+  padding-top: 7rem;
+}
+
 .my-7rem {
   margin-top: 7rem;
   margin-bottom: 7rem;
@@ -134,8 +138,33 @@ h6 {
   margin-top: 30%;
 }
 
+.letter-spacing {
+  letter-spacing: 0.05rem;
+}
+
 .d-grid {
   display: grid;
+}
+
+.icon-circle {
+  height: 45px;
+  width: 45px;
+  border-radius: 100px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: #000;
+}
+.icon-circle .fa-instagram, .icon-circle .fa-facebook-f, .icon-circle .fa-twitter {
+  color: #fff;
+}
+
+.icon-circle:hover {
+  border: 1px solid black;
+  background: #fff;
+}
+.icon-circle:hover .fa-instagram, .icon-circle:hover .fa-facebook-f, .icon-circle:hover .fa-twitter {
+  color: #000;
 }
 
 .carousel-item.active {
@@ -275,6 +304,42 @@ h6 {
 
 .card-item:hover {
   border: 1px solid black !important;
+}
+
+footer {
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-form-input {
+  border-radius: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer-form-btn {
+  background: #000;
+  color: white;
+  border: 0px;
+  font-weight: 700;
+  letter-spacing: 0.1;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.list-style-none {
+  padding: 0;
+  list-style-type: none;
 }
 
 #carousel1, #carousel2, #carousel3 {
