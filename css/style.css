@@ -22,6 +22,26 @@ h4 {
   font-size: 1.5rem;
 }
 
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.1rem;
+}
+
+.text-gray {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.text-orange {
+  color: #ff896b;
+}
+
+.text-small {
+  font-size: 0.8rem;
+}
+
 .container-own {
   width: 100%;
   padding-right: 15px;
@@ -46,6 +66,11 @@ h4 {
   width: 50px;
   height: 1px;
   background: #000;
+}
+
+.title-border-left h2::after {
+  left: 0;
+  transform: translateX(0);
 }
 
 .carousel-item {
@@ -180,7 +205,8 @@ h4 {
 .card-item .card-text {
   letter-spacing: 0.1rem;
 }
-.card-item .readmore-link {
+
+.readmore-link {
   position: relative;
   color: #000;
   text-decoration: none;
@@ -189,7 +215,13 @@ h4 {
   font-size: 10px;
   padding-bottom: 10px;
 }
-.card-item .readmore-link::after {
+
+.readmore-link:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.emphasized::after {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -199,12 +231,25 @@ h4 {
   background: #000;
   transition: 0.5s all ease;
 }
-.card-item .readmore-link:hover {
-  text-decoration: none;
-  color: #000;
+
+.emphasized:hover::after {
+  width: 0px;
+  transition: 0.5s all ease;
 }
-.card-item .readmore-link:hover::after {
-  width: 0%;
+
+.unemphasized::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 0px;
+  height: 1px;
+  background: #000;
+  transition: 0.5s all ease;
+}
+
+.unemphasized:hover::after {
+  width: 100%;
   transition: 0.5s all ease;
 }
 
