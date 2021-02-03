@@ -30,6 +30,10 @@ h6 {
   font-size: 1.1rem;
 }
 
+.bg-gray {
+  background: #e6e6e6;
+}
+
 .text-gray {
   color: rgba(0, 0, 0, 0.3);
 }
@@ -251,6 +255,22 @@ h6 {
 .unemphasized:hover::after {
   width: 100%;
   transition: 0.5s all ease;
+}
+
+.highlighted {
+  position: relative;
+  z-index: 10;
+}
+
+.highlighted::after {
+  content: "";
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #ff896b;
+  z-index: -1;
 }
 
 .card-item:hover {
