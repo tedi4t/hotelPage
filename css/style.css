@@ -91,6 +91,18 @@ h6 {
   margin-bottom: 7rem;
 }
 
+.mb-7rem {
+  margin-bottom: 7rem;
+}
+
+.pt-6rem {
+  padding-top: 6rem;
+}
+
+.pb-3rem {
+  padding-bottom: 3rem;
+}
+
 .py-6rem {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -136,6 +148,10 @@ h6 {
 
 .mt-30p {
   margin-top: 30%;
+}
+
+.mt-m90 {
+  margin-top: -90px;
 }
 
 .letter-spacing {
