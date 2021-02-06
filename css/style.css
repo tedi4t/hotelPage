@@ -2,6 +2,14 @@ body {
   line-height: 1.7rem;
 }
 
+.container {
+  position: relative;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Cormorant Garamond", serif;
 }
@@ -44,6 +52,10 @@ h6 {
 
 .text-small {
   font-size: 0.8rem;
+}
+
+.font-size-12 {
+  font-size: 12px !important;
 }
 
 .container-own {
@@ -163,8 +175,8 @@ h6 {
 }
 
 .icon-circle {
-  height: 45px;
-  width: 45px;
+  height: 30px;
+  width: 30px;
   border-radius: 100px;
   display: grid;
   align-items: center;
@@ -297,6 +309,50 @@ h6 {
   transition: 0.5s all ease;
 }
 
+.emphasized-white::after, .unemphasized-white::after {
+  background: #fff;
+}
+
+#navbar {
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  transition: 100;
+  color: #fff;
+}
+
+ul.nav-items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  z-index: 1;
+}
+ul.nav-items li a, ul.nav-items li a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-brand {
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.nav-brand a {
+  color: white;
+}
+
+.nav-social {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
 .unemphasized:hover::after {
   width: 100%;
   transition: 0.5s all ease;
@@ -351,6 +407,11 @@ footer a:hover {
   letter-spacing: 0.1;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.icon-circle-2x {
+  height: 45px;
+  width: 45px;
 }
 
 .list-style-none {
