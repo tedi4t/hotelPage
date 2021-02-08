@@ -516,3 +516,23 @@ footer a:hover {
   bottom: 0;
   background: rgba(0, 0, 0, 0.2);
 }
+
+.carousel-caption {
+  opacity: 0;
+  animation-name: carousel-caption;
+  animation-delay: 800ms;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes carousel-caption {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
