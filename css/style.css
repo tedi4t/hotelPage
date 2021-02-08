@@ -444,3 +444,14 @@ footer a:hover {
     max-width: 1440px;
   }
 }
+.before-animation {
+  opacity: 0;
+  padding-top: 200px;
+}
+
+.animate {
+  opacity: 1;
+  padding-top: 0px;
+  transition-timing-function: ease;
+  transition-duration: 1.5s;
+}
