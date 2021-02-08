@@ -32,12 +32,12 @@ $(window).scroll(() => {
   });
 
   if (scrollTop > 0) {
-    $('#navbar').css('background', '#fff');
-    $('#navbar').css('box-shadow', '0 0 15px rgba(0, 0, 0, 0.8)');
+    $('#navbar').addClass('navbar-scrolled');
+    $('#navbar').removeClass('navbar-unscrolled');
     $('.nav-link').css('color', '#000');
   } else {
-    $('#navbar').css('background', 'rgba(0, 0, 0, 0)');
-    $('#navbar').css('box-shadow', 'none');
+    $('#navbar').addClass('navbar-unscrolled');
+    $('#navbar').removeClass('navbar-scrolled');
     $('.nav-link').css('color', '#fff');
   }
 })

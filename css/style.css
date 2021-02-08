@@ -319,12 +319,64 @@ h6 {
   top: 0;
   width: 100%;
   color: #fff;
-  height: 70px;
-  margin-bottom: -70px;
-  background: rgba(0, 0, 0, 0);
-  transition: 0.8s all ease;
 }
 
+.navbar-scrolled {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  color: #000;
+  transition-duration: 0.5s;
+  animation-name: navbar-scrolled;
+  animation-timing-function: ease;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes navbar-scrolled {
+  0% {
+    background: rgba(255, 255, 255, 0);
+    height: 0;
+    margin-bottom: 0;
+  }
+  80% {
+    background: #fff;
+    height: 100px;
+    margin-bottom: -100px;
+  }
+  100% {
+    background: #fff;
+    height: 70px;
+    margin-bottom: -70px;
+  }
+}
+.navbar-unscrolled {
+  box-shadow: none;
+  color: #fff;
+  transition-duration: 0.5s;
+  animation-name: navbar-unscrolled;
+  animation-timing-function: ease;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes navbar-unscrolled {
+  0% {
+    background: #fff;
+    height: 70px;
+    margin-bottom: -70px;
+  }
+  20% {
+    background: #fff;
+    height: 100px;
+    margin-bottom: -100px;
+  }
+  100% {
+    background: rgba(255, 255, 255, 0);
+    height: 0px;
+    margin-bottom: 0px;
+  }
+}
 ul.nav-items {
   position: absolute;
   top: 0;
