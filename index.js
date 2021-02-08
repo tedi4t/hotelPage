@@ -12,7 +12,7 @@ $(window).scroll(() => {
   sections.map((ind, elem) => {
     if (elem) {
       const itemOffsetHeight = $(elem).offset().top;
-      if (itemOffsetHeight + 100 < scrollBottom) {
+      if (itemOffsetHeight + 30 < scrollBottom) {
         $(elem).addClass('animate');
         sections.splice(ind, 1);
       }
