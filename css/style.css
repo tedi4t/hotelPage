@@ -1,5 +1,7 @@
 body {
-  line-height: 1.7rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
 }
 
 .container {
@@ -140,6 +142,10 @@ h6 {
 .py-50 {
   padding-bottom: 60px;
   padding-top: 40px;
+}
+
+.pl-50 {
+  padding-left: 50px;
 }
 
 .ml-50px {
@@ -540,4 +546,26 @@ footer a:hover {
   height: 100vh;
   width: 100%;
   background: url("../images/other/img_2.jpg");
+}
+
+.room-image {
+  height: 100%;
+}
+
+.room-image-1 {
+  background: no-repeat url("../images/gallery/room_1_a.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.price {
+  font-size: 1.8rem;
+}
+
+.tick-list {
+  list-style-type: none;
+}
+.tick-list li::before {
+  content: "<i class=" fas fa-check "></i>";
+  color: #000;
 }
