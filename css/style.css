@@ -109,6 +109,10 @@ h6 {
   margin-bottom: 7rem;
 }
 
+.mb-5rem {
+  margin-bottom: 5rem;
+}
+
 .pt-6rem {
   padding-top: 6rem;
 }
@@ -127,7 +131,7 @@ h6 {
 }
 
 .pb-60 {
-  padding-bottom: 60px;
+  padding-bottom: 60px !important;
 }
 
 .py-40 {
@@ -136,7 +140,7 @@ h6 {
 }
 
 .pt-50 {
-  padding-top: 50px;
+  padding-top: 50px !important;
 }
 
 .py-50 {
@@ -499,7 +503,7 @@ footer a:hover {
 
 @media (min-width: 1200px) {
   .container-own {
-    max-width: 1440px;
+    max-width: 1600px;
   }
 }
 .before-animation {
