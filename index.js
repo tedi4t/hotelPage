@@ -19,10 +19,10 @@ $(window).scroll(() => {
     }
   })
 
-  $('.img-top').map((ind, elem) => {
+  $('.animate-img-top').map((ind, elem) => {
     const elementHeight = $(elem).innerHeight()
-    const itemOffsetHeight = $(elem).offset().top + elementHeight * 0.5;
-    $( elem ).css( "transform", `translateY(${ (itemOffsetHeight - offsetHeight) / 10 }px)` );
+    const itemOffsetHeight = $(elem).offset().top;
+    $( elem ).css( "transform", `translateY(${ (itemOffsetHeight - offsetHeight) / 7 }px)` );
   });
 
   $('.suite-content').map((ind, elem) => {

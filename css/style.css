@@ -97,7 +97,7 @@ h6 {
 }
 
 .mt-7rem {
-  padding-top: 7rem;
+  margin-top: 7rem;
 }
 
 .my-7rem {
@@ -168,8 +168,8 @@ h6 {
   margin-top: 30%;
 }
 
-.mt-m90 {
-  margin-top: -90px;
+.mt-m60 {
+  margin-top: -60px;
 }
 
 .letter-spacing {
@@ -523,16 +523,16 @@ footer a:hover {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.carousel-caption {
+.animate-caption {
   opacity: 0;
-  animation-name: carousel-caption;
+  animation-name: animate-caption;
   animation-delay: 800ms;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
 
-@keyframes carousel-caption {
+@keyframes animate-caption {
   0% {
     opacity: 0;
     transform: translateY(200px);
