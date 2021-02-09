@@ -113,6 +113,14 @@ h6 {
   margin-bottom: 5rem;
 }
 
+.mb-3rem {
+  margin-bottom: 3rem;
+}
+
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
 .pt-6rem {
   padding-top: 6rem;
 }
@@ -609,4 +617,16 @@ footer a:hover {
 
 .fs-1dot5rem {
   font-size: 1.5rem;
+}
+
+.br-0 {
+  border-radius: 0;
+}
+
+.btn-form-contact {
+  background: #000;
+  color: white;
+  font-weight: 700;
+  border: 0px;
+  padding: 10px 50px;
 }
