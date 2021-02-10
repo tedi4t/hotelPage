@@ -130,3 +130,9 @@ $('#next-btn').click(() => {
   const sliderNumb = slideNow % slideCount;
   $('#carousel-counter-text').html(`${sliderNumb ? slideNow % slideCount : 4}/${slideCount}`)
 });
+$('.minor-carousel').click(() => {
+  nextSlide();
+  nextSlideClone();
+  const sliderNumb = slideNow % slideCount;
+  $('#carousel-counter-text').html(`${sliderNumb ? slideNow % slideCount : 4}/${slideCount}`)
+});

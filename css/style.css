@@ -672,6 +672,12 @@ footer a:hover {
   height: 100%;
   z-index: 10;
   background: rgba(255, 255, 255, 0.8);
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+#block-for-slider-minor:hover .minor-carousel-bg {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 #block-for-slider, #block-for-slider-minor {
