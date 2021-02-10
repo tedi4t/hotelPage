@@ -41,3 +41,92 @@ $(window).scroll(() => {
     $('.nav-link').css('color', '#fff');
   }
 })
+
+// GALLERY-CAROUSEL
+let slideNow = 1;
+const slides = $('#slidewrapper').children();
+const slideCount = $('#slidewrapper').children().length;
+const viewportWidth = $('#block-for-slider').width();
+console.log(viewportWidth);
+
+const third = 100 / 3;
+
+$('#slidewrapper').children().remove();
+$('#slidewrapper').css('width', `${viewportWidth * 3}px`);
+
+$('#slidewrapper').append($(slides[(slideCount - 1) % slideCount]).attr('id', 'prev').css('margin-left', `-${third}%`));
+$('#slidewrapper').append($(slides[(slideNow - 1) % slideCount]).attr('id', 'active').css('margin-left', '0%'));
+$('#slidewrapper').append($(slides[(slideNow) % slideCount]).attr('id', 'next').css('margin-left', `0%`));
+
+function nextSlide() {
+  $('#slidewrapper #prev').remove();
+  $('#slidewrapper #active').attr('id', 'prev').css('margin-left', `-${third}%`);
+  $('#slidewrapper #next').attr('id', 'active').css('margin-left', '0%');
+  slideNow++;
+  $('#slidewrapper').append($(slides[(slideNow) % slideCount]).attr('id', 'next').css('margin-left', `0%`));
+}
+
+function prevSlide() {
+  $('#slidewrapper #next').remove();
+  $('#slidewrapper #active').attr('id', 'next').css('margin-left', `0%`);
+  $('#slidewrapper #prev').attr('id', 'active').css('margin-left', '0%');
+  slideNow = slideNow === 1 ? slideCount : slideNow - 1;
+  const prevID = slideNow === 1 ? 3 : (slideNow - 2) % slideCount;
+  $('#slidewrapper').prepend($(slides[prevID]).attr('id', 'prev').css('margin-left', `-${third}%`));
+}
+
+// $('#prev-btn').click(() => {
+//   console.log('original');
+//   prevSlide();
+//   const sliderNumb = slideNow % slideCount;
+//   $('#carousel-counter-text').html(`${sliderNumb ? slideNow % slideCount : 4}/${slideCount}`)
+// });
+// $('#next-btn').click(() => {
+//   nextSlide()
+//   const sliderNumb = slideNow % slideCount;
+//   $('#carousel-counter-text').html(`${sliderNumb ? slideNow % slideCount : 4}/${slideCount}`)
+// });
+
+
+// FOR CLONE
+const slidesClone = $('#slidewrapper-clone').children();
+// const slideCount = $('#slidewrapper-clone').children().length;
+const viewportCloneWidth = $('#block-for-slider-minor').width();
+console.log(viewportCloneWidth);
+
+$('#slidewrapper-clone').children().remove();
+$('#slidewrapper-clone').css('width', `${viewportCloneWidth * 3}px`);
+
+$('#slidewrapper-clone').append($(slidesClone[(slideCount) % slideCount]).attr('id', 'prev-clone').css('margin-left', `-${third}%`));
+$('#slidewrapper-clone').append($(slidesClone[(slideNow) % slideCount]).attr('id', 'active-clone').css('margin-left', '0%'));
+$('#slidewrapper-clone').append($(slidesClone[(slideNow + 1) % slideCount]).attr('id', 'next-clone').css('margin-left', `0%`));
+
+function nextSlideClone() {
+  $('#slidewrapper-clone #prev-clone').remove();
+  $('#slidewrapper-clone #active-clone').attr('id', 'prev-clone').css('margin-left', `-${third}%`);
+  $('#slidewrapper-clone #next-clone').attr('id', 'active-clone').css('margin-left', '0%');
+  // slideNow++;
+  $('#slidewrapper-clone').append($(slidesClone[(slideNow + 1) % slideCount]).attr('id', 'next-clone').css('margin-left', `0%`));
+}
+
+function prevSlideClone() {
+  $('#slidewrapper-clone #next-clone').remove();
+  $('#slidewrapper-clone #active-clone').attr('id', 'next-clone').css('margin-left', `0%`);
+  $('#slidewrapper-clone #prev-clone').attr('id', 'active-clone').css('margin-left', '0%');
+  // slideNow = slideNow === 1 ? slideCount : slideNow - 1;
+  const prevID = slideNow === 1 ? 3 : (slideNow - 2) % slideCount;
+  $('#slidewrapper-clone').prepend($(slidesClone[prevID]).attr('id', 'prev-clone').css('margin-left', `-${third}%`));
+}
+
+$('#prev-btn').click(() => {
+  prevSlide();
+  prevSlideClone();
+  const sliderNumb = slideNow % slideCount;
+  $('#carousel-counter-text').html(`${sliderNumb ? slideNow % slideCount : 4}/${slideCount}`)
+});
+$('#next-btn').click(() => {
+  nextSlide();
+  nextSlideClone();
+  const sliderNumb = slideNow % slideCount;
+  $('#carousel-counter-text').html(`${sliderNumb ? slideNow % slideCount : 4}/${slideCount}`)
+});
