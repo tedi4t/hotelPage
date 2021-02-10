@@ -125,6 +125,10 @@ h6 {
   margin-bottom: 2rem;
 }
 
+.p-1px {
+  padding: 1px;
+}
+
 .pt-6rem {
   padding-top: 6rem;
 }
