@@ -343,6 +343,14 @@ h6 {
   background: #fff;
 }
 
+.emphasized-dark::after, .unemphasized-dark::after {
+  background: #000;
+}
+
+.emphasized-orange::after, .unemphasized-orange::after {
+  background: #ff896b;
+}
+
 #navbar {
   z-index: 1000;
   position: sticky;
