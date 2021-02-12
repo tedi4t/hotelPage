@@ -446,6 +446,72 @@ ul.nav-items li a, ul.nav-items li a:hover {
   z-index: 10;
 }
 
+.toggler-navbar {
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.toggler-navbar-icon, .toggler-navbar-icon::before, .toggler-navbar-icon::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: #fff;
+}
+
+.toggler-navbar-icon {
+  top: 0px;
+}
+
+.toggler-navbar-icon::before {
+  top: 8px;
+}
+
+.toggler-navbar-icon::after {
+  top: 17px;
+}
+
+.navbar-small-devices {
+  position: fixed;
+  background: #fff;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 60%;
+  min-width: 180px;
+  transform: translateX(-100%);
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+.navbar-small-devices .close-button {
+  padding-left: auto;
+  color: #000;
+  display: grid;
+  justify-content: end;
+}
+.navbar-small-devices .nav-items {
+  position: relative;
+  display: block;
+}
+.navbar-small-devices .nav-items li {
+  display: block;
+  width: 100%;
+  padding: 0;
+  text-transform: capitalize;
+  letter-spacing: normal;
+  font-size: 1rem !important;
+}
+.navbar-small-devices .nav-items li a {
+  color: #000 !important;
+}
+
+.navbar-small-devices-unopened {
+  transform: translateX(0%);
+}
+
 .unemphasized:hover::after {
   width: 100%;
   transition: 0.5s all ease;

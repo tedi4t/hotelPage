@@ -1,6 +1,8 @@
 let unemphasizedWhite;
 let scrolled = false;
 const innerHeight = $(window).innerHeight();
+const innerWidth = $(window).innerWidth();
+const largeBreakpoint = 992;
 const sections = $('.animate-block');
 sections.map((ind, elem) => {
   $(elem).addClass('before-animation');
@@ -33,25 +35,27 @@ $(window).scroll(() => {
     $( elem ).css( "transform", `translateY(${ - (itemOffsetHeight - offsetHeight) / 6 + 80 }px)` );
   });
 
-  if (scrollTop > 0) {
-    if (!scrolled) {
-      scrolled = true;
-      $('#navbar').addClass('navbar-scrolled');
-      $('#navbar').removeClass('navbar-unscrolled');
-      $('#navbar li').addClass('unemphasized-orange');
-      unemphasizedWhite = $('#navbar li').first().hasClass('unemphasized-white')
-      removedClass = $('#navbar li').removeClass(unemphasizedWhite ? 'unemphasized-white' : 'unemphasized-dark');
-      $('.nav-link').css('color', '#000');
+  if (innerWidth > largeBreakpoint) {
+    if (scrollTop > 0) {
+      if (!scrolled) {
+        scrolled = true;
+        $('#navbar').addClass('navbar-scrolled');
+        $('#navbar').removeClass('navbar-unscrolled');
+        $('#navbar li').addClass('unemphasized-orange');
+        unemphasizedWhite = $('#navbar li').first().hasClass('unemphasized-white')
+        removedClass = $('#navbar li').removeClass(unemphasizedWhite ? 'unemphasized-white' : 'unemphasized-dark');
+        $('.nav-link').css('color', '#000');
+        console.log(unemphasizedWhite);
+      }
+    } else {
+      scrolled = false;
       console.log(unemphasizedWhite);
+      $('#navbar').addClass('navbar-unscrolled');
+      $('#navbar').removeClass('navbar-scrolled');
+      $('#navbar li').addClass(unemphasizedWhite ? 'unemphasized-white' : 'unemphasized-dark');
+      $('#navbar li').removeClass('unemphasized-orange');
+      $('.nav-link').css('color', '#fff');
     }
-  } else {
-    scrolled = false;
-    console.log(unemphasizedWhite);
-    $('#navbar').addClass('navbar-unscrolled');
-    $('#navbar').removeClass('navbar-scrolled');
-    $('#navbar li').addClass(unemphasizedWhite ? 'unemphasized-white' : 'unemphasized-dark');
-    $('#navbar li').removeClass('unemphasized-orange');
-    $('.nav-link').css('color', '#fff');
   }
 })
 
@@ -146,3 +150,13 @@ $('.minor-carousel').click(() => {
   const sliderNumb = slideNow % slideCount;
   $('#carousel-counter-text').html(`${sliderNumb ? slideNow % slideCount : 4}/${slideCount}`)
 });
+
+// NAVBAR
+$('.toggler-navbar').click(() => {
+  $('.navbar-small-devices').toggleClass('navbar-small-devices-unopened');
+  $('.navbar-small-devices').append($('.navbar-collapse').removeClass());
+})
+
+$('.close-button').click(() => {
+  $('.navbar-small-devices').removeClass('navbar-small-devices-unopened');
+})
