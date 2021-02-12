@@ -68,6 +68,16 @@ h6 {
   margin-left: auto;
 }
 
+@media (min-width: 576px) {
+  .container-own {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container-own {
+    max-width: 730px;
+  }
+}
 .title-border {
   display: block;
   padding-bottom: 15px;
@@ -931,6 +941,10 @@ footer a:hover {
 
   .pt-lg-6rem {
     padding-top: 6rem !important;
+  }
+
+  .pb-lg-3rem {
+    padding-bottom: 3rem;
   }
 
   .ml-lg-50px {
