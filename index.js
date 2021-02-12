@@ -3,6 +3,10 @@ let scrolled = false;
 const innerHeight = $(window).innerHeight();
 const innerWidth = $(window).innerWidth();
 const largeBreakpoint = 992;
+const translateYImageKoef = innerWidth > largeBreakpoint ? 7 : 12;
+const translateYTextKoef = innerWidth > largeBreakpoint ? 6 : 14;
+const offsetYText = innerWidth > largeBreakpoint ? 80 : 50;
+const offsetBottomAnimation = innerWidth > largeBreakpoint ? 30 : 0;
 const sections = $('.animate-block');
 sections.map((ind, elem) => {
   $(elem).addClass('before-animation');
@@ -16,7 +20,7 @@ $(window).scroll(() => {
   sections.map((ind, elem) => {
     if (elem) {
       const itemOffsetHeight = $(elem).offset().top;
-      if (itemOffsetHeight + 30 < scrollBottom) {
+      if (itemOffsetHeight + offsetBottomAnimation < scrollBottom) {
         $(elem).addClass('animate');
         sections.splice(ind, 1);
       }
@@ -26,16 +30,16 @@ $(window).scroll(() => {
   $('.animate-img-top').map((ind, elem) => {
     const elementHeight = $(elem).innerHeight()
     const itemOffsetHeight = $(elem).offset().top;
-    $( elem ).css( "transform", `translateY(${ (itemOffsetHeight - offsetHeight) / 7 }px)` );
+    $( elem ).css( "transform", `translateY(${ (itemOffsetHeight - offsetHeight) / translateYImageKoef }px)` );
   });
 
   $('.suite-content').map((ind, elem) => {
     const elementHeight = $(elem).innerHeight();
     const itemOffsetHeight = $(elem).offset().top + elementHeight * 0.5;
-    $( elem ).css( "transform", `translateY(${ - (itemOffsetHeight - offsetHeight) / 6 + 80 }px)` );
+    $( elem ).css( "transform", `translateY(${ - (itemOffsetHeight - offsetHeight) / translateYTextKoef + offsetYText }px)` );
   });
 
-  if (innerWidth > largeBreakpoint) {
+  // if (innerWidth > largeBreakpoint) {
     if (scrollTop > 0) {
       if (!scrolled) {
         scrolled = true;
@@ -45,18 +49,16 @@ $(window).scroll(() => {
         unemphasizedWhite = $('#navbar li').first().hasClass('unemphasized-white')
         removedClass = $('#navbar li').removeClass(unemphasizedWhite ? 'unemphasized-white' : 'unemphasized-dark');
         $('.nav-link').css('color', '#000');
-        console.log(unemphasizedWhite);
       }
     } else {
       scrolled = false;
-      console.log(unemphasizedWhite);
       $('#navbar').addClass('navbar-unscrolled');
       $('#navbar').removeClass('navbar-scrolled');
       $('#navbar li').addClass(unemphasizedWhite ? 'unemphasized-white' : 'unemphasized-dark');
       $('#navbar li').removeClass('unemphasized-orange');
       $('.nav-link').css('color', '#fff');
     }
-  }
+  // }
 })
 
 // GALLERY-CAROUSEL
@@ -160,3 +162,13 @@ $('.toggler-navbar').click(() => {
 $('.close-button').click(() => {
   $('.navbar-small-devices').removeClass('navbar-small-devices-unopened');
 })
+
+// Fix 100vh for mobile
+// function appHeight() {
+//   const doc = document.documentElement;
+//   doc.style.setProperty('--vh', (window.innerHeight*.01) + 'px');
+//   // $('body').css('width', `${window.innerWidth}px`);
+// }
+
+// window.addEventListener('resize', appHeight);
+// appHeight();
